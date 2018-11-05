@@ -68,7 +68,7 @@ Zepto(function($){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Getting Started with AeroGear Mobile Services :: AeroGear Mobile Services</title>
     <link rel="canonical" href="https://docs.aerogear.org/aerogear/latest/getting-started.html">
-    <meta name="generator" content="Antora 1.1.1">
+    <meta name="generator" content="Antora 1.1.0">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="icon" href="../../_/img/favicon.png" type="image/x-icon">
   </head>
@@ -413,14 +413,6 @@ Zepto(function($){
     <span class="version">latest</span>
   </div>
   <ul class="components">
-    <li class="component">
-      <span class="title">Mobile Security</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../mobile-security/latest/index.html">latest</a>
-        </li>
-      </ul>
-    </li>
     <li class="component is-current">
       <span class="title">Mobile Services</span>
       <ul class="versions">
@@ -444,7 +436,7 @@ Zepto(function($){
     <li class="crumb"><a href="getting-started.html">Getting Started</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/aerogear/mobile-docs/edit/master/modules/ROOT/pages/getting-started.adoc"></a></div>
+  <div class="edit-this-page"><a href="file:///antora/mobile-docs/modules/ROOT/pages/getting-started.adoc"></a></div>
 </div>
 <article class="doc">
 <h1>Getting Started with AeroGear Mobile Services</h1>
@@ -460,7 +452,6 @@ Zepto(function($){
 <li><a href="#dockerhub-cluster-ip-and-wildcard-dns-host-values">DockerHub, Cluster IP and Wildcard DNS Host values</a></li>
 </ul>
 </li>
-<li><a href="#registering">Registering a Mobile Client</a></li>
 <li><a href="#provisioning">Provisioning your First Service</a>
 <ul class="sectlevel3">
 <li><a href="#identity-management-configuration">Identity Management Configuration</a></li>
@@ -468,7 +459,7 @@ Zepto(function($){
 </li>
 <li><a href="#binding">Binding a Mobile Client</a>
 <ul class="sectlevel2">
-<li><a href="#procedure-3">Procedure</a></li>
+<li><a href="#procedure-2">Procedure</a></li>
 <li><a href="#localdev">Configuring the Service</a></li>
 </ul>
 </li>
@@ -824,70 +815,9 @@ Typically, you should ensure you are using the IP Address of your Wireless Adapt
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Wildcard DNS Host (Defaults to nip.io):</code></pre>
 </div>
 </div>
+<div id="registering" class="paragraph">
+<p>include::_partials/registering-a-mobile-app.adoc[]</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="registering"><a class="anchor" href="#registering"></a>Registering a Mobile Client</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>After the setup is completed, the next thing you need to do is to register a Mobile Client for the mobile app that you are going to develop.</p>
-</div>
-<div class="paragraph">
-<p>A Mobile Client in OpenShift is a representation of the mobile app that you are developing locally. Mobile Clients allow you to bind your mobile app to mobile services such as Identity Management, Push Notification, Mobile Metrics and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement. For more information, please see <a href="mobile-clients.html" class="page">Mobile Clients in OpenShift</a></p>
-</div>
-<h3 id="procedure-2" class="discrete">Procedure</h3>
-<div class="paragraph">
-<p>To create a Mobile Client in your OpenShift project:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Log into the OpenShift console.</p>
-</li>
-<li>
-<p>Choose your project.</p>
-</li>
-<li>
-<p>Click <strong>Add to Project</strong> and choose <strong>Browse Catalog</strong> from the options.</p>
-<div class="paragraph">
-<p>You can filter the catalog items to only show mobile specific items by clicking the <strong>Mobile</strong> tab.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="_images/catalog-all.png" alt="Available Mobile Clients"></span></p>
-</div>
-</li>
-<li>
-<p>Click the <strong>Apps</strong> tab and then choose the mobile platform (Android, iOS, Cordova or Xamarin) and follow the wizard.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-On the wizard&#8217;s <strong>configuration</strong> screen, it is recommended that you input the name of the showcase application into the <strong>Package Name</strong> text box.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-When registering an iOS app, you are prompted for a bundle id. See the <a href="https://cocoacasts.com/what-are-app-ids-and-bundle-identifiers/">description of bundle identifiers</a> for more information.
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After the Mobile Client is provisioned, you can navigate to it from Project Overview. The Mobile Client view displays a list of mobile services that you can associate with the Mobile Client, and offers to provision any mobile service that is in the service catalog but is not currently provisioned.</p>
 </div>
 </div>
 </div>
@@ -1011,7 +941,7 @@ This association is called <strong>binding</strong> and it is necessary for your
 <p>To bind a Mobile Client with a mobile service:</p>
 </div>
 <div class="sect2">
-<h3 id="procedure-3"><a class="anchor" href="#procedure-3"></a>Procedure</h3>
+<h3 id="procedure-2"><a class="anchor" href="#procedure-2"></a>Procedure</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1067,28 +997,32 @@ For an explanation of these terms, see <a href="https://www.keycloak.org/documen
 <div class="sect3">
 <h4 id="choose-schema"><a class="anchor" href="#choose-schema"></a>Choose the schema of a redirect url</h4>
 <div class="sidebarblock primary">
-<div class="title">Android</div><div class="content">
+<div class="content">
+<div class="title">Android</div>
 <div class="paragraph">
 <p>It is recommended to use the package name of the Android app as the schema of the redirect url to avoid conflicts. (e.g. <code>com.aerogear.androidshowcase</code>)</p>
 </div>
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">iOS</div><div class="content">
+<div class="content">
+<div class="title">iOS</div>
 <div class="paragraph">
 <p>It is recommended to use the Bundle Identifier of the iOS app as the schema of the redirect url. (e.g. <code>org.aerogear.ios-showcase-template</code>)</p>
 </div>
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Cordova</div><div class="content">
+<div class="content">
+<div class="title">Cordova</div>
 <div class="paragraph">
 <p>Redirect url is <code>http://localhost/*</code>, without <code>:/callback</code>. Web Origin is <code>http://localhost/*</code>.</p>
 </div>
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Xamarin</div><div class="content">
+<div class="content">
+<div class="title">Xamarin</div>
 <div class="paragraph">
 <p>Depending on the platform, set the redirect as described in either the Android or the iOS tab.</p>
 </div>
@@ -1118,7 +1052,7 @@ For an explanation of these terms, see <a href="https://www.keycloak.org/documen
 <p>Click on the <strong>Keycloak Realm URL</strong> link to open the Keycloak Administration Console.</p>
 </li>
 <li>
-<p>Log in to the Administration console using the credentials you specified at <a href="keycloak/provisioning.html" class="page">Provisioning</a> (defaults to admin:admin)</p>
+<p>Log in to the Administration console using the credentials you specified at <a href="#">keycloak/provisioning.adoc</a> (defaults to admin:admin)</p>
 </li>
 <li>
 <p>Select <code>Clients</code> from the left navigation menu.</p>
@@ -1169,7 +1103,8 @@ You can only use the AeroGear Xamarin SDK to create iOS and Android Apps.
 </table>
 </div>
 <div class="sidebarblock primary">
-<div class="title">Android</div><div class="content">
+<div class="content">
+<div class="title">Android</div>
 <div class="paragraph">
 <p>You need the following installed on your machine:</p>
 </div>
@@ -1189,7 +1124,8 @@ You can only use the AeroGear Xamarin SDK to create iOS and Android Apps.
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">iOS</div><div class="content">
+<div class="content">
+<div class="title">iOS</div>
 <div class="paragraph">
 <p>You need the following installed on your machine:</p>
 </div>
@@ -1221,7 +1157,8 @@ If you have not installed CocoaPods, install it by running the command:</p>
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Cordova</div><div class="content">
+<div class="content">
+<div class="title">Cordova</div>
 <div class="paragraph">
 <p>You need the following installed on your machine:</p>
 </div>
@@ -1241,7 +1178,8 @@ If you have not installed CocoaPods, install it by running the command:</p>
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Xamarin</div><div class="content">
+<div class="content">
+<div class="title">Xamarin</div>
 <div class="paragraph">
 <p>You need the following installed on your system:</p>
 </div>
@@ -1272,7 +1210,8 @@ If you have not installed CocoaPods, install it by running the command:</p>
 <div class="sect2">
 <h3 id="cloning-the-showcase-app"><a class="anchor" href="#cloning-the-showcase-app"></a>Cloning the Showcase App</h3>
 <div class="sidebarblock primary">
-<div class="title">Android</div><div class="content">
+<div class="content">
+<div class="title">Android</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git clone https://github.com/aerogear/android-showcase-template.git
@@ -1283,7 +1222,8 @@ $ git checkout 1.0.0</code></pre>
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">iOS</div><div class="content">
+<div class="content">
+<div class="title">iOS</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git clone https://github.com/aerogear/ios-showcase-template.git
@@ -1294,7 +1234,8 @@ $ git checkout 1.0.0</code></pre>
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Cordova</div><div class="content">
+<div class="content">
+<div class="title">Cordova</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git clone https://github.com/aerogear/cordova-showcase-template.git
@@ -1305,7 +1246,8 @@ $ git checkout 1.0.0</code></pre>
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Xamarin</div><div class="content">
+<div class="content">
+<div class="title">Xamarin</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git clone https://github.com/aerogear/xamarin-showcase-template.git
@@ -1350,7 +1292,8 @@ The mobile-services.json file is the link between your provisioned services on O
 </ol>
 </div>
 <div class="sidebarblock primary">
-<div class="title">Android</div><div class="content">
+<div class="content">
+<div class="title">Android</div>
 <div class="paragraph">
 <p>Move mobile-services.json to the following location in your application project:</p>
 </div>
@@ -1360,7 +1303,8 @@ The mobile-services.json file is the link between your provisioned services on O
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">iOS</div><div class="content">
+<div class="content">
+<div class="title">iOS</div>
 <div class="paragraph">
 <p>Move mobile-services.json to the following location in your application project:</p>
 </div>
@@ -1382,7 +1326,8 @@ Ensure that <code>mobile-services.json</code> is a member of the project in the 
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Cordova</div><div class="content">
+<div class="content">
+<div class="title">Cordova</div>
 <div class="paragraph">
 <p>Move mobile-services.json to the following location in your application project:</p>
 </div>
@@ -1392,7 +1337,8 @@ Ensure that <code>mobile-services.json</code> is a member of the project in the 
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Xamarin</div><div class="content">
+<div class="content">
+<div class="title">Xamarin</div>
 <div class="paragraph">
 <p>Move mobile-services.json to the following location in your application project:</p>
 </div>
@@ -1405,7 +1351,8 @@ Ensure that <code>mobile-services.json</code> is a member of the project in the 
 <div class="sect2">
 <h3 id="building-the-app"><a class="anchor" href="#building-the-app"></a>Building the app</h3>
 <div class="sidebarblock primary">
-<div class="title">Android</div><div class="content">
+<div class="content">
+<div class="title">Android</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ./gradlew assembleDebug</code></pre>
@@ -1414,7 +1361,8 @@ Ensure that <code>mobile-services.json</code> is a member of the project in the 
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">iOS</div><div class="content">
+<div class="content">
+<div class="title">iOS</div>
 <div class="paragraph">
 <p>Run this command to install dependencies:</p>
 </div>
@@ -1436,7 +1384,8 @@ Ensure that <code>mobile-services.json</code> is a member of the project in the 
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Cordova</div><div class="content">
+<div class="content">
+<div class="title">Cordova</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ npm install
@@ -1446,7 +1395,8 @@ $ npm run ionic:build</code></pre>
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Xamarin</div><div class="content">
+<div class="content">
+<div class="title">Xamarin</div>
 <div class="paragraph">
 <p>Run this command to install dependencies (optional):</p>
 </div>
@@ -1518,7 +1468,8 @@ base64 --decode | sed -e '1,/^-----END RSA PRIVATE KEY-----$/ d'  &gt; /tmp/loca
 <div class="sect3">
 <h4 id="installing-on-device"><a class="anchor" href="#installing-on-device"></a>2. Installing the OpenShift Root Certificate Authority Cert on a Device</h4>
 <div class="sidebarblock primary">
-<div class="title">Android</div><div class="content">
+<div class="content">
+<div class="title">Android</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1567,7 +1518,8 @@ certificate and let you add it to the device. Here is <a href="https://support.g
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">iOS</div><div class="content">
+<div class="content">
+<div class="title">iOS</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1620,7 +1572,8 @@ installed certificate. Instructions can be found on the
 <div class="sect2">
 <h3 id="running-the-app-in-an-emulator"><a class="anchor" href="#running-the-app-in-an-emulator"></a>Running the app in an emulator</h3>
 <div class="sidebarblock primary">
-<div class="title">Android</div><div class="content">
+<div class="content">
+<div class="title">Android</div>
 <div class="paragraph">
 <p>To run an Android app in an emulator, see the following <a href="https://developer.android.com/training/basics/firstapp/running-app" target="_blank" rel="noopener">documentation</a>.</p>
 </div>
@@ -1639,14 +1592,16 @@ The AeroGear SDK supports API level 21 or later.
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">iOS</div><div class="content">
+<div class="content">
+<div class="title">iOS</div>
 <div class="paragraph">
 <p>To run an iOS app in an emulator, see the following <a href="https://help.apple.com/xcode/mac/current/#/dev2809b6cff" target="_blank" rel="noopener">documentation</a>.</p>
 </div>
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Cordova</div><div class="content">
+<div class="content">
+<div class="title">Cordova</div>
 <div class="paragraph">
 <p>Cordova cross-platform applications can be run in the following emulators:</p>
 </div>
@@ -1675,7 +1630,8 @@ A running emulator on macOS is required to run an iOS application.
 </div>
 </div>
 <div class="sidebarblock secondary">
-<div class="title">Xamarin</div><div class="content">
+<div class="content">
+<div class="title">Xamarin</div>
 <div class="paragraph">
 <p>Xamarin cross-platform applications are run in the following emulators:</p>
 </div>
